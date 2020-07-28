@@ -1,5 +1,5 @@
 ### Study Notes
-[Intro to Object Orientation in JavaScript](https://github.com/getfutureproof/fp_guides_wiki/wiki/Object-Orientation)
+[Intro to Object Orientation in JavaScript](https://github.com/getfutureproof/fp_guides_wiki/wiki/Object-Orientation-in-JavaScript)
 
 # Exercises
 - Tamagotchi: Create a text-based game in nodejs that enables us to control a pet via user input.
