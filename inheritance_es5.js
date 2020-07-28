@@ -8,14 +8,14 @@ function Animal(name, dob, owner=null) {
     this.owner = owner;
 };
 
-Animal.prototype.speak = function(){ console.log(`${this.name} says hello!`) }
+Animal.prototype.speak = function(){ console.log(`${this.name} says hello!`) };
 
 Animal.prototype.adopt = function(newOwner){ this.owner = newOwner; };
 
 // defining a getter property
 Object.defineProperty(Animal.prototype, 'adoptionStatus', {
     get() { return this.owner ? `${this.name} has been adopted by ${this.owner}!` : `${this.name} is still searching for their forever home!` }
-})
+});
 
 
 // --------------------------------------------------------------------
@@ -41,7 +41,7 @@ function Dog(breedIdx, name, dob, owner) {
     this.breed = dogBreeds[breedIdx];
 };
 
-Dog.prototype.speak = function(){ console.log(`${this.name} says Woof!`); }
+Dog.prototype.speak = function(){ console.log(`${this.name} says Woof!`); };
 Object.setPrototypeOf(Dog.prototype, Animal.prototype);
 
 
@@ -50,8 +50,8 @@ Object.setPrototypeOf(Dog.prototype, Animal.prototype);
 // Run `node inheritance.js` to see output
 // --------------------------------------------------------------------
 console.log('\n--------------------------------------------\n')
-
-let zelda = new Cat('Zelda', 180726)
+;
+let zelda = new Cat('Zelda', 180726);
 console.log(zelda.name, zelda.dob);
 console.log(zelda.adoptionStatus);
 zelda.adopt('Beth');
@@ -62,9 +62,9 @@ console.log('Is Zelda an Animal?', (zelda instanceof Animal) );
 console.log('Is Zelda a Cat?', (zelda instanceof Cat) );
 console.log('Is Zelda a Dog?', (zelda instanceof Dog) );
 
-console.log('\n--------------------------------------------\n')
+console.log('\n--------------------------------------------\n');
 
-let mochi = new Dog(0, 'Mochi', 200401)
+let mochi = new Dog(0, 'Mochi', 200401);
 console.log(mochi.name, mochi.dob, mochi.breed);
 console.log(mochi.adoptionStatus);;
 mochi.adopt('Naz');
@@ -75,4 +75,4 @@ console.log('Is Mochi an Animal?', (mochi instanceof Animal) );
 console.log('Is Mochi a Cat?', (mochi instanceof Cat) );
 console.log('Is Mochi a Dog?', (mochi instanceof Dog) );
 
-console.log('\n--------------------------------------------\n')
+console.log('\n--------------------------------------------\n');

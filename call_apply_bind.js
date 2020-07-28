@@ -21,17 +21,17 @@ const tigerlily = {
 // const adopt = newOwner => this.owner = newOwner;
 
 function getAdoptionStatus(){
-    this.owner ? console.log(`${this.name} has been adopted by ${this.owner}!`) : console.log(`${this.name} is still searching for their forever home!`)
+    this.owner ? console.log(`${this.name} has been adopted by ${this.owner}!`) : console.log(`${this.name} is still searching for their forever home!`);
 };
 
 function adopt(newOwner){
     this.owner = newOwner;
 };
 
-console.log('\n--------------------------------------------')
-console.log('--------------------------------------------')
-console.log('------------------CALL----------------------')
-console.log('--------------------------------------------\n')
+console.log('\n--------------------------------------------');
+console.log('--------------------------------------------');
+console.log('------------------CALL----------------------');
+console.log('--------------------------------------------\n');
 
 console.log(zelda.name, zelda.dob, zelda.owner);
 getAdoptionStatus.call(zelda);
@@ -41,10 +41,10 @@ getAdoptionStatus.call(zelda);
 
 
 
-console.log('\n--------------------------------------------')
-console.log('--------------------------------------------')
-console.log('------------------APPLY---------------------')
-console.log('--------------------------------------------\n')
+console.log('\n--------------------------------------------');
+console.log('--------------------------------------------');
+console.log('------------------APPLY---------------------');
+console.log('--------------------------------------------\n');
 
 console.log(mochi.name, mochi.dob, mochi.owner);
 getAdoptionStatus.apply(mochi);
@@ -54,10 +54,10 @@ getAdoptionStatus.apply(mochi);
 
 
 
-console.log('\n--------------------------------------------')
-console.log('--------------------------------------------')
-console.log('------------------BIND----------------------')
-console.log('--------------------------------------------\n')
+console.log('\n--------------------------------------------');
+console.log('--------------------------------------------');
+console.log('------------------BIND----------------------');
+console.log('--------------------------------------------\n');
 
 console.log(tigerlily.name, tigerlily.dob, tigerlily.owner);
 const getTLsAdoptionStatus = getAdoptionStatus.bind(tigerlily); // .bind returns a new function but does not invoke it
@@ -67,4 +67,4 @@ getTLsAdoptionStatus(); // invoking our new function (created on line 47)
 adoptTL('Christine'); // invoking our second new function (created on line 48)
 getTLsAdoptionStatus(); // invoking our new function again (created on line 47)
 
-console.log('\n--------------------------------------------\n')
+console.log('\n--------------------------------------------\n');

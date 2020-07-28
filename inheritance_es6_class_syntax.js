@@ -7,9 +7,9 @@ class Animal{
         this.name = name;
         this.dob = dob;
         this.owner = owner;
-    }
+    };
 
-    speak(){ console.log(`${this.name} says hello!`); }
+    speak(){ console.log(`${this.name} says hello!`); };
     
     adopt(newOwner){ this.owner = newOwner; };
 
@@ -39,36 +39,36 @@ class Dog extends Animal {
         this.breed = dogBreeds[breedIdx];
     };
 
-    speak(){ console.log('Woof!'); }
+    speak(){ console.log('Woof!'); };
 };
 
 
 
 // Run `node inheritance.js` to see output
-console.log('\n--------------------------------------------\n')
+console.log('\n--------------------------------------------\n');
 
-let zelda = new Cat('Zelda', 180726)
+let zelda = new Cat('Zelda', 180726);
 console.log(zelda.name, zelda.dob);
 console.log(zelda.adoptionStatus);
 zelda.adopt('Beth');
-zelda.speak()
+zelda.speak();
 console.log(zelda.adoptionStatus);
 
 console.log('Is Zelda an Animal?', (zelda instanceof Animal) );
 console.log('Is Zelda a Cat?', (zelda instanceof Cat) );
 console.log('Is Zelda a Dog?', (zelda instanceof Dog) );
 
-console.log('\n--------------------------------------------\n')
+console.log('\n--------------------------------------------\n');
 
-let mochi = new Dog(0, 'Mochi', 200401)
+let mochi = new Dog(0, 'Mochi', 200401);
 console.log(mochi.name, mochi.dob, mochi.breed);
 console.log(mochi.adoptionStatus);
 mochi.adopt('Naz');
-mochi.speak()
+mochi.speak();
 console.log(mochi.adoptionStatus);
 
 console.log('Is Mochi an Animal?', (mochi instanceof Animal) );
 console.log('Is Mochi a Cat?', (mochi instanceof Cat) );
 console.log('Is Mochi a Dog?', (mochi instanceof Dog) );
 
-console.log('\n--------------------------------------------\n')
+console.log('\n--------------------------------------------\n');

@@ -20,16 +20,16 @@ class SHIELDError extends Error {
 
 
 // Top Secret Vault App!
-const level10s = [{name: "Fury", faveColour: "red"}, {name: "Pierce", faveColour: "blue"}]
+const level10s = [{name: "Fury", faveColour: "red"}, {name: "Pierce", faveColour: "blue"}];
 
 ui.question('Welcome to the Top Secret Info Vault. What is your last name?\n', input => {
     try {
-        let user = level10s.find(u => u.name.toLowerCase() === input.toLowerCase())
+        let user = level10s.find(u => u.name.toLowerCase() === input.toLowerCase());
         if(user){
-            nextQuestion(user)
+            nextQuestion(user);
         } else {
-            throw new Error(`Hey, you can't be here!`)
-        } 
+            throw new Error(`Hey, you can't be here!`);
+        } ;
     } catch (err) {
         console.log(err.message); // Experiment with err, err.name, err.message, err.stack
         ui.close();
@@ -41,10 +41,10 @@ function nextQuestion(user){
     ui.question('What is your favourite colour?\n', input => {
         try {
             if(input === user.faveColour){
-                console.log('Excellent, you may proceed...')
+                console.log('Excellent, you may proceed...');
                 showTopSecretInfo();
             } else {
-                throw new SHIELDError(`${user.name}'s favourite colour would never be ${input}! Get outta here!`)
+                throw new SHIELDError(`${user.name}'s favourite colour would never be ${input}! Get outta here!`);
             } 
         } catch (err) {
             console.log(err.message); // Experiment with err, err.name, err.message, err.stack

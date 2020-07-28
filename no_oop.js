@@ -15,19 +15,19 @@ const mochi = {
     adopt: newOwner => this.owner = newOwner
 };
 
-console.log('\n--------------------------------------------\n')
+console.log('\n--------------------------------------------\n');
 
-console.log(zelda.name, zelda.dob, zelda.owner);
+console.log(zelda.name, zelda.dob);
 zelda.getAdoptionStatus();
 zelda.adopt("Beth");
 zelda.getAdoptionStatus();
 // console.log(zelda instanceof Animal) // It would be great if this returned true!
 
-console.log('\n--------------------------------------------\n')
+console.log('\n--------------------------------------------\n');
 // Why do we have undefineds in these results?
-console.log(mochi.name, mochi.dob, mochi.owner);
+console.log(mochi.name, mochi.dob);
 mochi.getAdoptionStatus();
-mochi.adopt("Beth");
+mochi.adopt("Naz");
 mochi.getAdoptionStatus();
 
-console.log('\n--------------------------------------------\n')
+console.log('\n--------------------------------------------\n');
