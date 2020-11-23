@@ -30,7 +30,7 @@ const level10s = [{name: "Fury", faveColour: "red"}, {name: "Pierce", faveColour
 // Top Secret Vault App!
 class SecretVaultAccess {
 
-    async run(){
+    run(){
         console.clear()
         this.firstQuestion();
     }
