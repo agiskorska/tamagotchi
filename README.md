@@ -13,4 +13,4 @@
     - Implement Error handling
     - How can you make this a more engaging game? What else would be cool for your pet to do? Can the user choose the type of food they feed their pet, with the pet randomly deciding if they like it or not?
 
-*To gather user input, the [`prompt-sync`](https://github.com/heapwolf/prompt-sync#readme) or [`inquirer`](https://www.npmjs.com/package/inquirer) modules are alternatives to the builtin `readline`. It is up to you what tool you use.*
+*To gather user input, the [`inquirer`](https://www.npmjs.com/package/inquirer) or [`prompt-sync`](https://github.com/heapwolf/prompt-sync#readme) modules are two of many alternatives to the builtin `readline` module. It is up to you what tool you use.*
