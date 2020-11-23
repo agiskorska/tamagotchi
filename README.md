@@ -8,8 +8,9 @@
         - Creating a new pet and giving it a name and any other features defined.
         - User wants to feed or play with their pet..
         - User wants to check in with their pet and see how it’s happiness and hunger levels are. \
-  *Note: These will require you to create methods within your Pet class.*
+  *Note: These will require you to create methods within your Pet class.* \
+  *It is your choice as to whether you encapsulate your app logic in another class*
     - Implement Error handling
     - How can you make this a more engaging game? What else would be cool for your pet to do? Can the user choose the type of food they feed their pet, with the pet randomly deciding if they like it or not?
 
-*To gather user input, the [`prompt-sync`](https://github.com/heapwolf/prompt-sync#readme) module might come in handy but it is not the only option.*
+*To gather user input, the [`prompt-sync`](https://github.com/heapwolf/prompt-sync#readme) or [`inquirer`](https://www.npmjs.com/package/inquirer) modules are alternatives to the builtin `readline`. It is up to you what tool you use.*
