@@ -1,6 +1,5 @@
 // -------------------------------------------------
-// Run `node level_10s_only.js` to access the vault!
-// See lines 78+ for the entry point.
+// Run `node index.js` to access the vault!
 // -------------------------------------------------
 // -------------------------------------------------
 
@@ -75,6 +74,5 @@ class SecretVaultAccess {
     };
 }
 
-// Start a new instance of SecretVaultAccess and run it
-const app = new SecretVaultAccess()
-app.run()
+// Export SecretVaultAccess
+module.exports = { SecretVaultAccess }
