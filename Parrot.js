@@ -1,8 +1,5 @@
-const Pet = require('./Pet')
 class Parrot extends Pet {
-    constructor(name, hunger, happiness, sleepiness) {
-        super(name, hunger, happiness, sleepiness, "Parrot")
+    constructor(name) {
+        super(name, 100, 200, 30, "Parrot")
     }
 }
-
-module.exports = Parrot

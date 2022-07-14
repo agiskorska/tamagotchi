@@ -6,17 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Tamagotchi</title>
     <link rel="stylesheet" href="style.css">
+    <script src="Pet.js" defer></script>
+    <script src="Parrot.js" defer></script>
     <script src="runTamagotchi.js" defer></script>
   </head>
   <body>
-    <form action="" id="tamagotchi">
-        <select id="need" name="need">
-            <option value="hunger">Hunger</option>
-            <option value="sleepyness">Sleepyness</option>
-            <option value="happiness">Happiness</option>
-          </select>
-        <input type="text" id="input-content">
-        <input type="submit">
+    <form action="" id="form">
+      <input type="button" value="feed" id="hunger">
+      <input type="button" value="pet" id="happiness">
+      <input type="button" value="goToBed" id="sleepiness">
     </form>
   </body>
 </html>

@@ -1,8 +1,5 @@
-const Parrot = require('./Parrot')
 
-const kakadoo = new Parrot("Tabby", 100, 50, 100)
-
-
+const kakadoo = new Parrot("Tabby")
 
 console.log(kakadoo)
 kakadoo.live()

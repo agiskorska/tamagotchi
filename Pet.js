@@ -1,53 +1,53 @@
-const prompt = require('prompt');
-
 class Pet {
     constructor(name, hunger, happiness, sleepiness, type) {
         this.name = name;
-        this.hunger = hunger;
-        this.happiness = happiness;
-        this.sleepiness = sleepiness;
+        this.stats = {
+            hunger,
+            happiness,
+            sleepiness
+        }
         this.type = type;
+        //TODO is there a better way to do this?
+        this.form = document.getElementById('form')
     }
 
-    feed(food){
-        const amount = food.length;
-        this.hunger += amount
-        console.log("Should be fed "+this.hunger)
+    supply(id){
+        // on click this function adds appropriate stat to pet
+        if(id === "sleepiness"){
+            this.stats.sleepiness *= 3
+        } else {
+            this.stats[id] += 10
+        }
+        console.log(this.stats[id])
     }
 
+    submitHandler = (e) => {
+        // this handles an event listener on the buttons
+        e.preventDefault()
+        // if goToBed clicked, disable all buttons for 15 sec
+        if (e.target.id === "sleepiness"){
+            document.querySelectorAll("input").forEach((btn) => {
+                btn.disabled = true;
+                setTimeout(()=>{
+                    btn.disabled = false;
+                    console.log('Button Activated')}, 5000)
+            })
+        }
+        this.supply(e.target.id)
+    }
+    
     live(){
-        prompt.start();
-        this.getPrompt();
+        this.form.addEventListener('click', this.submitHandler)
         const interval = setInterval(() => {
-            this.hunger -= 20
-            if(this.hunger <=0) {
-                clearInterval(interval)
-                console.log(`You deaded ${this.name}, you monster!`)
-            } else {
-                console.log(this.hunger)
+            for(let stat in this.stats) {
+                let currentLevel = this.stats[stat]
+                if(currentLevel <=0) {
+                    console.log("You killed your pet, you monster!")
+                } else {
+                    currentLevel -= 20
+                    console.log(currentLevel)
+                }
             }
         }, 5000)
     }
-    
-    feedFromPrompt(err, result) {
-        if (err) {
-          return onErr(err);
-        }
-        console.log('Command-line input received:');
-        console.log(result.food)
-        food = result.food;
-        this.feed(food)
-    }
-
-    getPrompt(){
-        let food = ''
-        prompt.get(["food"], this.feedFromPrompt)
-        this.feed(food)
-        function onErr(err) {
-        console.log(err);
-        return 1;
-        }
-    }
 }
-
-module.exports = Pet
