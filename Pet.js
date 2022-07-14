@@ -39,12 +39,14 @@ class Pet {
     live(){
         this.form.addEventListener('click', this.submitHandler)
         const interval = setInterval(() => {
+            //TODO this is not taking away - chcek why
             for(let stat in this.stats) {
                 let currentLevel = this.stats[stat]
                 if(currentLevel <=0) {
                     console.log("You killed your pet, you monster!")
+                    clearInterval(interval)
                 } else {
-                    currentLevel -= 20
+                    currentLevel = currentLevel - 20
                     console.log(currentLevel)
                 }
             }
