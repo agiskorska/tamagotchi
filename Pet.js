@@ -18,13 +18,13 @@ class Pet {
     }
 
     supply(id){
-        // on click this function adds appropriate stat to pet
         if(id === "sleepiness"){
             this.stats.sleepiness *= 3
         } else {
             this.stats[id] += 10
         }
-        console.log(this.stats[id])
+        this.displayText()
+
     }
 
     submitHandler = (e) => {
@@ -47,18 +47,36 @@ class Pet {
         `hunger: ${this.stats.hunger}; happiness: ${this.stats.happiness}; sleepiness: ${this.stats.sleepiness}`
     }
 
+    calculateStats(int){
+        for(let stat in this.stats) {
+            if(this.stats[stat] > 0) {
+                this.stats[stat] -= 10 * this.multipliers[stat]
+            } else {
+                console.log(this.info.textContent)
+                this.info.textContent = "You killed your pet, you monster!!!!"
+                clearInterval(int)            
+            }
+            
+        }
+
+    }
+
     live(){
         this.form.addEventListener('click', this.submitHandler)
         const interval = setInterval(() => {
-            if(this.stats.hunger > 0 && this.stats.happiness > 0 && this.stats.sleepiness > 0) {
-                this.stats.happiness -= 10 * this.multipliers.happiness
-                this.stats.hunger -= 10 * this.multipliers.hunger
-                this.stats.sleepiness -= 10 * this.multipliers.sleepiness
-                this.displayText()
-            } else {
-                this.info.textContent = "You killed your pet, you monster!!!!"
-                clearInterval(interval)
-            }
-        }, 5000)
+            this.displayText()
+
+            this.calculateStats(interval)
+        }, 3000)
     }
 }
+
+// if(this.stats.hunger > 0 && this.stats.happiness > 0 && this.stats.sleepiness > 0) {
+//     this.stats.happiness -= 10 * this.multipliers.happiness
+//     this.stats.hunger -= 10 * this.multipliers.hunger
+//     this.stats.sleepiness -= 10 * this.multipliers.sleepiness
+//     this.displayText()
+// } else {
+//     this.info.textContent = "You killed your pet, you monster!!!!"
+//     clearInterval(interval)
+// }
