@@ -1,3 +1,7 @@
+# For tamagotchi, ignore all other files just run index.html
+
+
+
 ### Study Notes
 | [Intro to Object Orientation in JavaScript](https://github.com/getfutureproof/fp_guides_wiki/wiki/Object-Orientation-in-JavaScript) | [Call, Apply & Bind](https://github.com/getfutureproof/fp_guides_wiki/wiki/Call-vs-Apply-vs-Bind) |
 
