@@ -6,9 +6,15 @@ class Pet {
             happiness,
             sleepiness
         }
+        this.multipliers = {
+            hunger: 1,
+            happiness: 1,
+            sleepiness: 1
+        }
         this.type = type;
         //TODO is there a better way to do this?
         this.form = document.getElementById('form')
+        this.info = document.getElementById("info")
     }
 
     supply(id){
@@ -36,19 +42,22 @@ class Pet {
         this.supply(e.target.id)
     }
     
+    displayText(){
+        this.info.textContent = 
+        `hunger: ${this.stats.hunger}; happiness: ${this.stats.happiness}; sleepiness: ${this.stats.sleepiness}`
+    }
+
     live(){
         this.form.addEventListener('click', this.submitHandler)
         const interval = setInterval(() => {
-            //TODO this is not taking away - chcek why
-            for(let stat in this.stats) {
-                let currentLevel = this.stats[stat]
-                if(currentLevel <=0) {
-                    console.log("You killed your pet, you monster!")
-                    clearInterval(interval)
-                } else {
-                    currentLevel = currentLevel - 20
-                    console.log(currentLevel)
-                }
+            if(this.stats.hunger > 0 && this.stats.happiness > 0 && this.stats.sleepiness > 0) {
+                this.stats.happiness -= 10 * this.multipliers.happiness
+                this.stats.hunger -= 10 * this.multipliers.hunger
+                this.stats.sleepiness -= 10 * this.multipliers.sleepiness
+                this.displayText()
+            } else {
+                this.info.textContent = "You killed your pet, you monster!!!!"
+                clearInterval(interval)
             }
         }, 5000)
     }
